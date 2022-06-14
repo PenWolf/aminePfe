@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import axios from "axios";
 import { useQuery } from "react-query";
-import { useNavigate  } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 async function fetchPosts() {
   const { data } = await axios.get("http://127.0.0.1:8000/api/display-student");
@@ -13,8 +13,12 @@ export default function StudentsTable({ color }) {
   let navigate = useNavigate();
 
   const editing = (id) => {
-    navigate("./"+ id, { replace: true });
+    navigate("./" + id, { replace: true });
   };
+  const go  = () => {
+    window.location.replace('http://localhost:3000/admin/createStudent');
+  }
+
 
   const { data, error, isError, isLoading } = useQuery("students", fetchPosts);
   if (isLoading) {
@@ -23,7 +27,7 @@ export default function StudentsTable({ color }) {
   if (isError) {
     return <div>Error! {error.message}</div>;
   }
-  console.log(data)
+  console.log(data);
   return (
     <>
       <div
@@ -32,18 +36,13 @@ export default function StudentsTable({ color }) {
           (color === "light" ? "bg-white" : "bg-lightBlue-900 text-white")
         }
       >
-        <div className="rounded-t mb-0 px-4 py-3 border-0">
-          <div className="flex flex-wrap items-center">
-            <div className="relative w-full px-4 max-w-full flex-grow flex-1">
-              <h3
-                className={
-                  "font-semibold text-lg " +
-                  (color === "light" ? "text-blueGray-700" : "text-white")
-                }
-              >
-                Students
-              </h3>
-            </div>
+        <div className="w-full flex justify-between ">
+          <h1 style={{margin:'15px'}}>Students</h1>
+          <div className="mr-12" style={{margin:'15px'}}>
+            {" "}
+            <button className=" bg-emerald-400 text-white  w-full  p-2 rounded  h-14 hover:cursor-pointer" onClick={() => go()}>
+              create
+            </button>
           </div>
         </div>
         <div className="block w-full overflow-x-auto">

@@ -33,7 +33,7 @@ Route::post('get-all', [AuthController::class, 'getStudents']);
     Route::post('delete-teacher', [TeacherController::class, 'deleteTeacher']);
     Route::post('update-teacher', [TeacherController::class, 'updateTeacher']);
     Route::post('show-teacher', [TeacherController::class, 'showTeacher']);
-    Route::post('display-teacher', [TeacherController::class, 'displayTeacher']);
+    Route::get('display-teacher', [TeacherController::class, 'displayTeacher']);
 
 
 

@@ -37,45 +37,24 @@ class TeacherController extends Controller
     {
         $id = $request->id;
         $user = User::find($id);
-        if ($user) {
-            return response()->json([
-                'data' => $user,
-                'msg' => 'Teacher Exist',
-                'flag' => '1'
-            ]);
-        } else {
-            // echo 'does not exit <br>';
-            return response()->json([
-                'msg' => 'does not exit',
-                'flag' => '0'
-            ]);
-        }
+        return response()->json(
+            $user
+
+        );
     }
     public function updateTeacher(Request $request)
     {
         $id = $request->id;
         $user = User::find($id);
-        if ($user) {
-            User::whereId($id)->update(array(
-                'name' =>  $request->name,
-                'lastname'=>$request->lastname,
-               'email'=>$request->email,
-               'gender' => $request -> gender
-            ));
-            $user = User::whereId($id)->get();
-            return response()->json([
-                'data' => $user,
-                'msg' => 'Teacher Exist',
-                'flag' => '1'
-            ]);
-        } else {
-            // echo 'does not exit <br>';
-            return response()->json([
-                'msg' => 'does not exit',
-                'flag' => '0'
-            ]);
-        }
-       
+        User::whereId($id)->update(array(
+            'name' =>  $request->name,
+            'lastname' => $request->lastname,
+            'email' => $request->email,
+        ));
+        $user = User::whereId($id)->get();
+        return response()->json([
+            'data' => $user,
+        ]);
     }
     public function deleteTeacher(Request $request)
     {
@@ -95,22 +74,11 @@ class TeacherController extends Controller
             ]);
         }
     }
-    public function displayTeacher(Request $request)
+    public function displayTeacher()
     {
-        if ($request->role = 'admin') {
-            $users = User::where('role', 'teacher')->get();
-            return response()->json([
-                'data'=> $users,
-                'msg' => 'Teachers displayed',
-                'flag' => '1'
-            ]);
-        }
-        else {
-            return response()->json([
-                'msg' => 'not authorized',
-                'flag' => '0'
-            ]);
-        }
-       
+        $users = User::where('role', 'teacher')->get();
+        return response()->json([
+            'data' => $users,
+        ]);
     }
 }

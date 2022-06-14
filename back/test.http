@@ -1,11 +1,6 @@
-POST http://127.0.0.1:8000/api/update-student HTTP/1.1
+POST http://127.0.0.1:8000/api/show-teacher HTTP/1.1
 content-type: application/json
 
 {
-    "id" :7,
-    "name": "khalil",
-    "lastname": "soudani",
-    "email": "khalil@gmail.com",
-    "type": "L",
-    "classe":"cs 1"
+    "id" :2
 }

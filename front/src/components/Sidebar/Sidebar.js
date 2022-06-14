@@ -128,6 +128,117 @@ export default function Sidebar() {
                   Students
                 </Link>
               </li>
+
+              <li className="items-center">
+                <Link
+                  className={
+                    "text-xs uppercase py-3 font-bold block " +
+                    (window.location.href.indexOf("/admin/teachers") !== -1
+                      ? "text-lightBlue-500 hover:text-lightBlue-600"
+                      : "text-blueGray-700 hover:text-blueGray-500")
+                  }
+                  to="/admin/teachers"
+                >
+                  <i
+                  
+                    className={
+                      "fas fa-solid fa-graduation-cap mr-2 text-sm " +
+                      (window.location.href.indexOf("/admin/teachers") !== -1
+                        ? "opacity-75"
+                        : "text-blueGray-300")
+                    }
+                  ></i>{" "}
+                  Teachers
+                </Link>
+              </li>
+              <li>
+              <Link
+                  className={
+                    "text-xs uppercase py-3 font-bold block " +
+                    (window.location.href.indexOf("/admin/specialities") !== -1
+                      ? "text-lightBlue-500 hover:text-lightBlue-600"
+                      : "text-blueGray-700 hover:text-blueGray-500")
+                  }
+                  to="/admin/specialities"
+                >
+                  <i
+                  
+                    className={
+                      "fas fa-solid fa-graduation-cap mr-2 text-sm " +
+                      (window.location.href.indexOf("/admin/specialities") !== -1
+                        ? "opacity-75"
+                        : "text-blueGray-300")
+                    }
+                  ></i>{" "}
+                  Specialities
+                </Link>
+              </li>
+              <li>
+              <Link
+                  className={
+                    "text-xs uppercase py-3 font-bold block " +
+                    (window.location.href.indexOf("/admin/classes") !== -1
+                      ? "text-lightBlue-500 hover:text-lightBlue-600"
+                      : "text-blueGray-700 hover:text-blueGray-500")
+                  }
+                  to="/admin/classes"
+                >
+                  <i
+                  
+                    className={
+                      "fas fa-solid fa-graduation-cap mr-2 text-sm " +
+                      (window.location.href.indexOf("/admin/classes") !== -1
+                        ? "opacity-75"
+                        : "text-blueGray-300")
+                    }
+                  ></i>{" "}
+                  Classes
+                </Link>
+              </li>
+              <li>
+              <Link
+                  className={
+                    "text-xs uppercase py-3 font-bold block " +
+                    (window.location.href.indexOf("/admin/blogs") !== -1
+                      ? "text-lightBlue-500 hover:text-lightBlue-600"
+                      : "text-blueGray-700 hover:text-blueGray-500")
+                  }
+                  to="/admin/blogs"
+                >
+                  <i
+                  
+                    className={
+                      "fas fa-solid fa-graduation-cap mr-2 text-sm " +
+                      (window.location.href.indexOf("/admin/blogs") !== -1
+                        ? "opacity-75"
+                        : "text-blueGray-300")
+                    }
+                  ></i>{" "}
+                 Blogs
+                </Link>
+              </li>
+              <li>
+              <Link
+                  className={
+                    "text-xs uppercase py-3 font-bold block " +
+                    (window.location.href.indexOf("/admin/events") !== -1
+                      ? "text-lightBlue-500 hover:text-lightBlue-600"
+                      : "text-blueGray-700 hover:text-blueGray-500")
+                  }
+                  to="/admin/events"
+                >
+                  <i
+                  
+                    className={
+                      "fas fa-solid fa-graduation-cap mr-2 text-sm " +
+                      (window.location.href.indexOf("/admin/events") !== -1
+                        ? "opacity-75"
+                        : "text-blueGray-300")
+                    }
+                  ></i>{" "}
+                 Events
+                </Link>
+              </li>
               <li className="items-center">
                 <Link
                   className={
